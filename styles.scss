@@ -469,54 +469,53 @@ html {
 }
 
 .hero-section {
-    background-image: url("assets/panner.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 50px 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    height: 600px;
-  
-    h1 {
-      font-size: 60px;
-      font-weight: bold;
-      color: #8997a4;
-      opacity: 0;
-      transform: translateY(20px); // Initial position slightly down
-      animation: fadeInUp 1s ease-out forwards; // Apply animation
-      animation-delay: 0.3s; // Delay to start animation for h1
-    }
-  
-    p {
-      font-size: 18px;
-      color: #b3c3cb;
-      opacity: 0;
-      transform: translateY(20px); // Initial position slightly down
-      animation: fadeInUp 1s ease-out forwards; // Apply animation
-      animation-delay: 0.6s; // Delay to start animation for p
-    }
-  
-    .btn {
-      opacity: 0;
-      transform: translateY(20px); // Initial position slightly down
-      animation: fadeInUp 1s ease-out forwards; // Apply animation
-      animation-delay: 1s; // Delay to start animation for the button
-    }
+  background-image: url("assets/panner.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 600px;
+
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #8997a4;
+    opacity: 0;
+    transform: translateY(20px); // Initial position slightly down
+    animation: fadeInUp 1s ease-out forwards; // Apply animation
+    animation-delay: 0.3s; // Delay to start animation for h1
   }
-  
-  // Define the fadeInUp animation
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px); // Move up from 20px below
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0); // End at the final position
-    }
+
+  p {
+    font-size: 18px;
+    color: #b3c3cb;
+    opacity: 0;
+    transform: translateY(20px); // Initial position slightly down
+    animation: fadeInUp 1s ease-out forwards; // Apply animation
+    animation-delay: 0.6s; // Delay to start animation for p
   }
-  
+
+  .btn {
+    opacity: 0;
+    transform: translateY(20px); // Initial position slightly down
+    animation: fadeInUp 1s ease-out forwards; // Apply animation
+    animation-delay: 1s; // Delay to start animation for the button
+  }
+}
+
+// Define the fadeInUp animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); // Move up from 20px below
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); // End at the final position
+  }
+}
 
 .category-section {
   padding: 50px 0;
@@ -570,61 +569,61 @@ html {
 }
 
 .features-section {
-    background-color: #262323;
-    padding: 50px 0;
-    text-align: center;
-    opacity: 0; // Start hidden
-  
-    .feature {
-      padding: 20px;
-      opacity: 0; // Start with features hidden
-      transform: translateY(20px); // Start slightly below
-  
-      i {
-        font-size: 40px;
-        color: #ff3e3e;
-      }
-  
-      h5 {
-        font-size: 20px;
-        font-weight: bold;
-        color: #ffffff;
-      }
-  
-      p {
-        font-size: 16px;
-        color: #f8f3f3;
-      }
-  
-      // Keyframes for fade-in and slide-up animation
-      @keyframes fadeInSlideUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+  background-color: #262323;
+  padding: 50px 0;
+  text-align: center;
+  opacity: 0; // Start hidden
+
+  .feature {
+    padding: 20px;
+    opacity: 0; // Start with features hidden
+    transform: translateY(20px); // Start slightly below
+
+    i {
+      font-size: 40px;
+      color: #ff3e3e;
     }
-  
-    // Keyframes for section fade-in animation
-    @keyframes sectionFadeIn {
+
+    h5 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 16px;
+      color: #f8f3f3;
+    }
+
+    // Keyframes for fade-in and slide-up animation
+    @keyframes fadeInSlideUp {
       from {
         opacity: 0;
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
+        transform: translateY(0);
       }
     }
   }
-  
+
+  // Keyframes for section fade-in animation
+  @keyframes sectionFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
 
 .best-seller-section {
   padding: 50px 0;
   opacity: 0; // Start with section hidden
   transform: scale(0.9); // Start slightly smaller
+  transition: opacity 0.5s ease, transform 0.5s ease; // Add transition
 
   h2 {
     font-size: 30px;
@@ -641,6 +640,7 @@ html {
     text-align: center;
     opacity: 0; // Start with cards hidden
     transform: scale(0.9); // Start slightly smaller
+    transition: opacity 0.5s ease, transform 0.5s ease; // Add transition to product cards
 
     h5 {
       font-size: 18px;
@@ -656,18 +656,6 @@ html {
       font-size: 20px;
       font-weight: bold;
       color: #ff3e3e;
-    }
-
-    // Animation for scaling in the product cards
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
     }
   }
 
@@ -715,58 +703,59 @@ html {
 }
 
 .news-section {
-    padding: 50px 0;
-    opacity: 0; // Start hidden
-  
-    h2 {
-      font-size: 30px;
+  padding: 50px 0;
+  opacity: 0; // Start hidden
+
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .news-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    opacity: 0; // Start with cards hidden
+    transform: translateX(-50px); // Start off to the left
+    transition: transform 0.5s, opacity 0.5s; // Add transition for smoother animations
+
+    h5 {
+      font-size: 18px;
       font-weight: bold;
-      text-align: center;
-      margin-bottom: 30px;
     }
-  
-    .news-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      opacity: 0; // Start with cards hidden
-      transform: translateX(-50px); // Start off to the left
-  
-      h5 {
-        font-size: 18px;
-        font-weight: bold;
-      }
-  
-      p {
-        font-size: 16px;
-        color: #666;
-      }
-  
-      // Keyframes for slide-in from left and fading in
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateX(-50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
+
+    p {
+      font-size: 16px;
+      color: #666;
     }
-  
-    // Add keyframes for section fade-in animation
-    @keyframes sectionFadeIn {
+
+    // Define slideIn animation
+    @keyframes slideIn {
       from {
         opacity: 0;
+        transform: translateX(-50px);
       }
       to {
         opacity: 1;
+        transform: translateX(0);
       }
     }
   }
-  
+
+  // Section fade-in animation
+  @keyframes sectionFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
 .footer {
   background-color: #333;
   color: #fff;

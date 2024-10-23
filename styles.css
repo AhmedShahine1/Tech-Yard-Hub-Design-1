@@ -412,7 +412,7 @@ html {
 }
 
 .hero-section {
-  background-image: url('assets/panner.jpg');
+  background-image: url("assets/panner.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 0;
@@ -548,6 +548,7 @@ html {
   padding: 50px 0;
   opacity: 0;
   transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .best-seller-section h2 {
   font-size: 30px;
@@ -563,6 +564,7 @@ html {
   text-align: center;
   opacity: 0;
   transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .best-seller-section .product-card h5 {
   font-size: 18px;
@@ -576,16 +578,6 @@ html {
   font-size: 20px;
   font-weight: bold;
   color: #ff3e3e;
-}
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 @keyframes sectionScaleIn {
   from {
@@ -645,6 +637,7 @@ html {
   text-align: center;
   opacity: 0;
   transform: translateX(-50px);
+  transition: transform 0.5s, opacity 0.5s;
 }
 .news-section .news-card h5 {
   font-size: 18px;
