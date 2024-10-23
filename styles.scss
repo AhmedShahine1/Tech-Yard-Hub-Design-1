@@ -469,84 +469,162 @@ html {
 }
 
 .hero-section {
-  background-image: url("/assets/panner.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 50px 0;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  height: 600px;
-  h1 {
-    font-size: 60px;
-    font-weight: bold;
-    color: #8997a4;
+    background-image: url("/assets/panner.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 600px;
+  
+    h1 {
+      font-size: 60px;
+      font-weight: bold;
+      color: #8997a4;
+      opacity: 0;
+      transform: translateY(20px); // Initial position slightly down
+      animation: fadeInUp 1s ease-out forwards; // Apply animation
+      animation-delay: 0.3s; // Delay to start animation for h1
+    }
+  
+    p {
+      font-size: 18px;
+      color: #b3c3cb;
+      opacity: 0;
+      transform: translateY(20px); // Initial position slightly down
+      animation: fadeInUp 1s ease-out forwards; // Apply animation
+      animation-delay: 0.6s; // Delay to start animation for p
+    }
+  
+    .btn {
+      opacity: 0;
+      transform: translateY(20px); // Initial position slightly down
+      animation: fadeInUp 1s ease-out forwards; // Apply animation
+      animation-delay: 1s; // Delay to start animation for the button
+    }
   }
-
-  p {
-    font-size: 18px;
-    color: #b3c3cb;
+  
+  // Define the fadeInUp animation
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); // Move up from 20px below
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); // End at the final position
+    }
   }
-}
+  
 
 .category-section {
   padding: 50px 0;
-  h2 {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 30px;
-  }
+  opacity: 0; /* Initial state for fade-in effect */
+  transform: translateY(20px); /* Initial state for slide effect */
+  animation: fadeInUp 1s forwards; /* Animation for the section */
+
   .category-card {
     border-radius: 10px;
     padding: 10px;
     margin: 5px;
     color: #fff;
     text-align: center;
-    height: 250px; // Maintain height in CSS instead of inline style
+    height: 250px; /* Maintain height in CSS instead of inline style */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h5 {
-      font-size: 20px;
-      font-weight: bold;
-    }
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
-    p {
-      font-size: 16px;
-    }
+  .category-card:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+  }
+
+  .category-card h5 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .category-card p {
+    font-size: 16px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .features-section {
-  background-color: #262323;
-  padding: 50px 0;
-  text-align: center;
-
-  .feature {
-    padding: 20px;
-
-    i {
-      font-size: 40px;
-      color: #ff3e3e;
+    background-color: #262323;
+    padding: 50px 0;
+    text-align: center;
+    opacity: 0; // Start hidden
+  
+    .feature {
+      padding: 20px;
+      opacity: 0; // Start with features hidden
+      transform: translateY(20px); // Start slightly below
+  
+      i {
+        font-size: 40px;
+        color: #ff3e3e;
+      }
+  
+      h5 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+  
+      p {
+        font-size: 16px;
+        color: #f8f3f3;
+      }
+  
+      // Keyframes for fade-in and slide-up animation
+      @keyframes fadeInSlideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
-
-    h5 {
-      font-size: 20px;
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    p {
-      font-size: 16px;
-      color: #f8f3f3;
+  
+    // Keyframes for section fade-in animation
+    @keyframes sectionFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
   }
-}
+  
 
 .best-seller-section {
   padding: 50px 0;
+  opacity: 0; // Start with section hidden
+  transform: scale(0.9); // Start slightly smaller
 
   h2 {
     font-size: 30px;
@@ -561,6 +639,8 @@ html {
     padding: 10px;
     margin: 10px;
     text-align: center;
+    opacity: 0; // Start with cards hidden
+    transform: scale(0.9); // Start slightly smaller
 
     h5 {
       font-size: 18px;
@@ -577,65 +657,116 @@ html {
       font-weight: bold;
       color: #ff3e3e;
     }
+
+    // Animation for scaling in the product cards
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  // Add keyframes for section scale-in animation
+  @keyframes sectionScaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
+
 /* Custom CSS for announcement section */
 .announcement-carousel {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    position: relative;
-    height: 300px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .announcement-carousel .overlay {
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-  }
-  
-  .announcement-carousel h4,
-  .announcement-carousel p {
-    position: relative;
-    z-index: 1;
-  }
-  
-.news-section {
-  padding: 50px 0;
-
-  h2 {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .news-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    h5 {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 16px;
-      color: #666;
-    }
-  }
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.announcement-carousel .overlay {
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.announcement-carousel h4,
+.announcement-carousel p {
+  position: relative;
+  z-index: 1;
+}
+
+.news-section {
+    padding: 50px 0;
+    opacity: 0; // Start hidden
+  
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  
+    .news-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      opacity: 0; // Start with cards hidden
+      transform: translateX(-50px); // Start off to the left
+  
+      h5 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+  
+      p {
+        font-size: 16px;
+        color: #666;
+      }
+  
+      // Keyframes for slide-in from left and fading in
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+  
+    // Add keyframes for section fade-in animation
+    @keyframes sectionFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  
 .footer {
   background-color: #333;
   color: #fff;

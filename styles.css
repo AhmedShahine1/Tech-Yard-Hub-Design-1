@@ -425,20 +425,41 @@ html {
   font-size: 60px;
   font-weight: bold;
   color: #8997a4;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
 }
 .hero-section p {
   font-size: 18px;
   color: #b3c3cb;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+.hero-section .btn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 1s;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .category-section {
   padding: 50px 0;
-}
-.category-section h2 {
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 30px;
+  opacity: 0; /* Initial state for fade-in effect */
+  transform: translateY(20px); /* Initial state for slide effect */
+  animation: fadeInUp 1s forwards; /* Animation for the section */
 }
 .category-section .category-card {
   border-radius: 10px;
@@ -446,11 +467,21 @@ html {
   margin: 5px;
   color: #fff;
   text-align: center;
-  height: 250px;
+  height: 250px; /* Maintain height in CSS instead of inline style */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+.category-section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.category-section .category-card:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
 }
 .category-section .category-card h5 {
   font-size: 20px;
@@ -460,13 +491,26 @@ html {
   font-size: 16px;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .features-section {
   background-color: #262323;
   padding: 50px 0;
   text-align: center;
+  opacity: 0;
 }
 .features-section .feature {
   padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
 }
 .features-section .feature i {
   font-size: 40px;
@@ -481,9 +525,29 @@ html {
   font-size: 16px;
   color: #f8f3f3;
 }
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .best-seller-section {
   padding: 50px 0;
+  opacity: 0;
+  transform: scale(0.9);
 }
 .best-seller-section h2 {
   font-size: 30px;
@@ -497,6 +561,8 @@ html {
   padding: 10px;
   margin: 10px;
   text-align: center;
+  opacity: 0;
+  transform: scale(0.9);
 }
 .best-seller-section .product-card h5 {
   font-size: 18px;
@@ -510,6 +576,26 @@ html {
   font-size: 20px;
   font-weight: bold;
   color: #ff3e3e;
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes sectionScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Custom CSS for announcement section */
@@ -544,6 +630,7 @@ html {
 
 .news-section {
   padding: 50px 0;
+  opacity: 0;
 }
 .news-section h2 {
   font-size: 30px;
@@ -556,6 +643,8 @@ html {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
+  opacity: 0;
+  transform: translateX(-50px);
 }
 .news-section .news-card h5 {
   font-size: 18px;
@@ -564,6 +653,24 @@ html {
 .news-section .news-card p {
   font-size: 16px;
   color: #666;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .footer {
