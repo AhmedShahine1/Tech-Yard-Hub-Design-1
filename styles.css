@@ -512,6 +512,36 @@ html {
   color: #ff3e3e;
 }
 
+/* Custom CSS for announcement section */
+.announcement-carousel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-carousel .overlay {
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.announcement-carousel h4,
+.announcement-carousel p {
+  position: relative;
+  z-index: 1;
+}
+
 .news-section {
   padding: 50px 0;
 }
